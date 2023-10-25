@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tapanhegdeaksazuredevopssb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tapanhegdeaksazuredevopssb
+  template:
+    metadata:
+      labels:
+        app: tapanhegdeaksazuredevopssb 
+    spec:
+      containers:
+        - name: tapanhegdeaksazuredevopssb 
+          image: tapanacrrepo531.azurecr.io/tapanhegdeaksazuredevopssb
+          ports:
+          - containerPort: 80
