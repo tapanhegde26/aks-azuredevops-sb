@@ -8,6 +8,8 @@ trigger:
 resources:
 - repo: self
 
+pool:
+  name: 'Ubuntu18-VM-Pool'
 variables:
 
   # Container registry service connection established during pipeline creation
@@ -17,9 +19,6 @@ variables:
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'tapanacrrepo53120725c3a-auth'
-
-  # Agent VM image name
-  vmImageName: 'Ubuntu18-VM-Pool'
 
   # Name of the new namespace being created to deploy the PR changes.
   k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
